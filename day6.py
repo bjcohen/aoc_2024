@@ -1,5 +1,3 @@
-import itertools
-
 if __name__ == "__main__":
     with open("day6.txt") as f:
         grid = [[c for c in row.strip()] for row in f]

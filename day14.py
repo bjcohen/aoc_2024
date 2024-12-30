@@ -7,7 +7,7 @@ w = 101
 def parse(f):
     return [
         (int(m[1]), int(m[2]), int(m[3]), int(m[4]))
-        for m in (re.match(r"p=(-?\d+),(-?\d+) v=(-?\d+),(-?\d+)", l) for l in f)
+        for m in (re.match(r"p=(-?\d+),(-?\d+) v=(-?\d+),(-?\d+)", line) for line in f)
     ]
 
 

@@ -30,7 +30,9 @@ def is_safe(line):
 
 if __name__ == "__main__":
     with open("day2.txt") as f:
-        report = [[int(n) for n in l.split()] for l in f.read().strip().split("\n")]
+        report = [
+            [int(n) for n in line.split()] for line in f.read().strip().split("\n")
+        ]
     safecnt = 0
     for line in report:
         if is_safe(line):

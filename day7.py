@@ -14,8 +14,8 @@ def eval_eq(xs, n):
 if __name__ == "__main__":
     with open("day7.txt") as f:
         eqs = [
-            (int(l[0]), [int(n) for n in l[1].split(" ")])
-            for l in (l.strip().split(": ") for l in f)
+            (int(line[0]), [int(n) for n in line[1].split(" ")])
+            for line in (line.strip().split(": ") for line in f)
         ]
     total = 0
     for n, xs in eqs:

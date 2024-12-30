@@ -1,11 +1,10 @@
 import collections
-import math
 
 if __name__ == "__main__":
     with open("day1.txt") as f:
-        nums = [l.split("   ") for l in f]
-    nums1 = [int(l[0]) for l in nums]
-    nums2 = [int(l[1]) for l in nums]
+        nums = [line.split("   ") for line in f]
+    nums1 = [int(line[0]) for line in nums]
+    nums2 = [int(line[1]) for line in nums]
     dist = 0
     for n1, n2 in zip(sorted(nums1), sorted(nums2)):
         dist += abs(n1 - n2)

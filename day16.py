@@ -13,15 +13,15 @@ def min_path(grid):
     queue = [(0, x, y, d)]
     seen = {}
     while queue:
-        l, x, y, d = heapq.heappop(queue)
+        dist, x, y, d = heapq.heappop(queue)
         if (x, y, d) in seen:
             continue
-        seen[x, y, d] = l
+        seen[x, y, d] = dist
         for nl, nd in {
-            ">": ((l + 1, ">"), (l + 1001, "v"), (l + 1001, "^")),
-            "<": ((l + 1, "<"), (l + 1001, "v"), (l + 1001, "^")),
-            "^": ((l + 1, "^"), (l + 1001, "<"), (l + 1001, ">")),
-            "v": ((l + 1, "v"), (l + 1001, "<"), (l + 1001, ">")),
+            ">": ((dist + 1, ">"), (dist + 1001, "v"), (dist + 1001, "^")),
+            "<": ((dist + 1, "<"), (dist + 1001, "v"), (dist + 1001, "^")),
+            "^": ((dist + 1, "^"), (dist + 1001, "<"), (dist + 1001, ">")),
+            "v": ((dist + 1, "v"), (dist + 1001, "<"), (dist + 1001, ">")),
         }[d]:
             nx, ny = {
                 ">": (x + 1, y),
@@ -41,13 +41,13 @@ def min_path(grid):
                 queue.append((sl, *e))
     on_path = set()
     while queue:
-        l, x, y, d = queue.pop(0)
+        dist, x, y, d = queue.pop(0)
         on_path.add((x, y))
         for pl, pd in {
-            ">": ((l - 1, ">"), (l - 1001, "v"), (l - 1001, "^")),
-            "<": ((l - 1, "<"), (l - 1001, "v"), (l - 1001, "^")),
-            "^": ((l - 1, "^"), (l - 1001, "<"), (l - 1001, ">")),
-            "v": ((l - 1, "v"), (l - 1001, "<"), (l - 1001, ">")),
+            ">": ((dist - 1, ">"), (dist - 1001, "v"), (dist - 1001, "^")),
+            "<": ((dist - 1, "<"), (dist - 1001, "v"), (dist - 1001, "^")),
+            "^": ((dist - 1, "^"), (dist - 1001, "<"), (dist - 1001, ">")),
+            "v": ((dist - 1, "v"), (dist - 1001, "<"), (dist - 1001, ">")),
         }[d]:
             px, py = {
                 ">": (x - 1, y),

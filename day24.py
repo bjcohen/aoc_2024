@@ -1,7 +1,3 @@
-import functools
-import itertools
-
-
 def parse(text):
     inputs_txt, gates_txt = text.split("\n\n")
     return {i[0]: int(i[1]) for i in (i.split(": ") for i in inputs_txt.split("\n"))}, {

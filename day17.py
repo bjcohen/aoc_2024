@@ -43,7 +43,7 @@ def run(prog, a, b, c):
         elif instr == 7:
             c = a // (2 ** combo(op))
         else:
-            raise RuntimeException(f"unhandled op {op}")
+            raise RuntimeError(f"unhandled op {op}")
         if instr != 3 or a == 0:
             ip += 2
 

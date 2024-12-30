@@ -1,9 +1,10 @@
-import functools
 import itertools
 
 
 def parse(text):
-    return [(l[0], l[1]) for l in (l.split("-") for l in text.split("\n"))]
+    return [
+        (line[0], line[1]) for line in (line.split("-") for line in text.split("\n"))
+    ]
 
 
 def three_links(links):

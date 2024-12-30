@@ -5,8 +5,6 @@ def total_price(grid, bulk=False):
     seen = set()
     for y, row in enumerate(grid):
         for x, c in enumerate(row):
-            area = 0
-            perim = 0
             queue = [(x, y)]
             areas[x, y] = 0
             perims[x, y] = 0
@@ -15,7 +13,6 @@ def total_price(grid, bulk=False):
                 xi, yi = queue.pop()
                 if (xi, yi) in seen:
                     continue
-                perim = 0
                 adjacents = []
                 for dx, dy in [(-1, 0), (1, 0), (0, 1), (0, -1)]:
                     x_, y_ = xi + dx, yi + dy

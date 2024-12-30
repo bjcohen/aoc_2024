@@ -1,7 +1,3 @@
-import functools
-import itertools
-
-
 def parse(text):
     return [int(n) for n in text.split("\n")]
 
@@ -53,10 +49,10 @@ def best_seq(nums):
     for i in range(-9, 9):
         for j in range(-9, 9):
             for k in range(-9, 9):
-                for l in range(-9, 9):
+                for ll in range(-9, 9):
                     n = 0
                     for diff_map in diff_maps:
-                        diff = (i, j, k, l)
+                        diff = (i, j, k, ll)
                         n += diff_map.get(diff, 0)
                     m = max(n, m)
     return m

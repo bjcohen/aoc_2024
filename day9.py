@@ -1,6 +1,3 @@
-import itertools
-
-
 def checksum(blocks):
     blocks = blocks.copy()
     i = 0

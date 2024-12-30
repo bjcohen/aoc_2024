@@ -1,5 +1,4 @@
 import heapq
-import itertools
 
 
 def parse(text):
@@ -12,7 +11,6 @@ def n_cheats(grid):
     h = len(grid)
     w = len(grid[0])
     queue = [(0, sx, sy, [(sx, sy)])]
-    seen = set()
     paths = []
     while queue:
         d, x, y, path = heapq.heappop(queue)
@@ -45,9 +43,9 @@ def n_cheats(grid):
                     and (nx, ny) in path
                 ):
                     ni = path.index((nx, ny))
-                    l = ni - i - 2
-                    if l > 0:
-                        cheats[l] = cheats.get(l, 0) + 1
+                    dist = ni - i - 2
+                    if dist > 0:
+                        cheats[dist] = cheats.get(dist, 0) + 1
     cheats2 = {}
     for path in paths:
         for i, (xi, yi) in enumerate(path):

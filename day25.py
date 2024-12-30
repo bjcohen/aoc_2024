@@ -25,6 +25,6 @@ if __name__ == "__main__":
         1
         for lock in locks
         for key in keys
-        if all(l + k <= 7 for l, k in zip(lock, key))
+        if all(lo + k <= 7 for lo, k in zip(lock, key))
     )
     print(count)
